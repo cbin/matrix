@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>main.htm</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="generator" content="SynEdit HTML exporter" />
+<style type="text/css">
+<!--
+body { color: #000000; background-color: #FFFFFF; }
+.cpp1-assembler { color: #0000FF; }
+.cpp1-character { color: #000000; }
+.cpp1-comment { color: #3399FF; font-style: italic; }
+.cpp1-float { color: #800080; }
+.cpp1-hexadecimal { color: #800080; }
+.cpp1-identifier { color: #000000; }
+.cpp1-illegalchar { color: #000000; }
+.cpp1-number { color: #800080; }
+.cpp1-octal { color: #800080; }
+.cpp1-preprocessor { color: #008000; }
+.cpp1-reservedword { color: #000000; font-weight: bold; }
+.cpp1-space { background-color: #FFFFFF; color: #000000; }
+.cpp1-string { color: #FF0000; }
+.cpp1-symbol { color: #000000; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<code><span style="font: 10pt Courier New;"><span class="cpp1-preprocessor">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;sys\stat.h&gt;
+#include &lt;io.h&gt;
+
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> main(</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> argc, </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> *argv[])
+{
+</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> a[</span><span class="cpp1-number">5</span><span class="cpp1-symbol">][</span><span class="cpp1-number">5</span><span class="cpp1-symbol">]; </span><span class="cpp1-comment">//&acirc;&ucirc;&auml;&aring;&euml;&yuml;&thorn; &iuml;&agrave;&igrave;&yuml;&ograve;&uuml; &auml;&euml;&yuml; &igrave;&agrave;&ntilde;&ntilde;&egrave;&acirc;&agrave; &eth;&agrave;&ccedil;&igrave;&aring;&eth;&icirc;&igrave; 25 &aacute;&agrave;&eacute;&ograve;
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> i,j,n, handle; </span><span class="cpp1-comment">//&icirc;&aacute;&uacute;&yuml;&acirc;&euml;&yuml;&thorn; &iuml;&aring;&eth;&aring;&igrave;&aring;&iacute;&iacute;&ucirc;&aring; &ograve;&egrave;&iuml;&agrave; integer
+</span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(i=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;i&lt;</span><span class="cpp1-number">5</span><span class="cpp1-symbol">;i++)
+ {
+    </span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(j=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;j&lt;</span><span class="cpp1-number">5</span><span class="cpp1-symbol">;j++)
+    {
+          
+          n=</span><span class="cpp1-number">5</span><span class="cpp1-symbol">;  </span><span class="cpp1-comment">//&ntilde;&icirc;&ccedil;&auml;&agrave;&thorn; &acirc;&eth;&aring;&igrave;&aring;&iacute;&iacute;&oacute;&thorn; &iuml;&aring;&eth;&aring;&igrave;&aring;&iacute;&iacute;&oacute;&thorn;
+</span><span class="cpp1-space">          a[i][j]=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">; </span><span class="cpp1-comment">//&iuml;&eth;&egrave;&ntilde;&acirc;&agrave;&egrave;&acirc;&agrave;&thorn; &acirc;&ntilde;&aring;&igrave; &yacute;&euml;&aring;&igrave;&aring;&iacute;&ograve;&agrave;&igrave; &igrave;&agrave;&ntilde;&ntilde;&egrave;&acirc;&agrave; 0 &ccedil;&iacute;&agrave;&divide&aring;&iacute;&egrave;&aring;
+</span><span class="cpp1-space">          </span><span class="cpp1-reservedword">if</span><span class="cpp1-symbol">((i==j)||(j==n-i-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">)) a[i][j]=</span><span class="cpp1-number">1</span><span class="cpp1-symbol">; 
+          printf(</span><span class="cpp1-string">&quot;%3d&quot;</span><span class="cpp1-symbol">, a[i][j]); </span><span class="cpp1-comment">//&acirc;&ucirc;&acirc;&icirc;&aelig;&oacute; &iacute;&agrave; &yacute;&ecirc;&eth;&agrave;&iacute; &ntilde;&ocirc;&icirc;&eth;&igrave;&egrave;&eth;&icirc;&acirc;&agrave;&iacute;&iacute;&oacute;&thorn; &igrave;&agrave;&ograve;&eth;&egrave;&ouml;&oacute;  
+</span><span class="cpp1-space">          }                       </span><span class="cpp1-comment">//&eth;&agrave;&ccedil;&igrave;&aring;&eth;&icirc;&igrave; 5&otilde;5
+</span><span class="cpp1-space">          printf(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+          }
+          _fmode=O_BINARY;
+          handle=creat(</span><span class="cpp1-string">&quot;matrix.txt&quot;</span><span class="cpp1-symbol">, S_IREAD|S_IWRITE); </span><span class="cpp1-comment">//&ntilde;&icirc;&ccedil;&auml;&agrave;&thorn; &auml;&acirc;&icirc;&egrave;&divide&iacute;&ucirc;&eacute; &ocirc;&agrave;&eacute;&euml;
+</span><span class="cpp1-space">          write(handle, a, </span><span class="cpp1-reservedword">sizeof</span><span class="cpp1-symbol">(a)); </span><span class="cpp1-comment">//&ccedil;&agrave;&iuml;&egrave;&ntilde;&ucirc;&acirc;&agrave;&thorn; &igrave;&agrave;&ograve;&eth;&egrave;&ouml;&oacute; &acirc; &ocirc;&agrave;&eacute;&euml;
+</span><span class="cpp1-space">          close(handle); </span><span class="cpp1-comment">//&ccedil;&agrave;&ecirc;&eth;&ucirc;&acirc;&agrave;&thorn; &ocirc;&agrave;&eacute;&euml;
+</span><span class="cpp1-space">          getch();  </span><span class="cpp1-comment">//&aelig;&auml;&cedil;&igrave; &iacute;&agrave;&aelig;&agrave;&ograve;&egrave;&yuml; &euml;&thorn;&aacute;&icirc;&eacute; &ecirc;&euml;&agrave;&acirc;&egrave;&oslash;&egrave;
+</span><span class="cpp1-symbol">}  
+
+
+
+</span></span>
+</code></pre>
+</body>
+</html>
